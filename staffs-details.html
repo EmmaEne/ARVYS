@@ -2,347 +2,325 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Details</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instructor Profile — Clone</title>
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/courses.css">
-  <link rel="stylesheet" href="./assets/css/staffs.css">
-  <link href="./assets/css/style.css" rel="stylesheet">
-  <link href="./assets/css/staff-details.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/contact.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    /* layout */
+    .profile-hero {
+      background: linear-gradient(190deg, var(--accent1), var(--accent2));
+      color: #fff;
+      padding: 42px 24px;
+      border-radius: 12px;
+    }
+
+    .profile-avatar {
+      width: 112px;
+      height: 112px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 4px solid rgba(255, 255, 255, .12);
+    }
+
+    .sidebar-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(13, 38, 70, 0.06);
+      padding: 20px;
+    }
+
+    .rating {
+      color: #f3c24b;
+      font-weight: 600
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      background: #f4f6ff;
+      color: var(--accent2);
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(13, 38, 70, 0.04);
+    }
+
+    .course-card img {
+      height: 130px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .course-card .card-body {
+      padding: 14px
+    }
+
+    /* responsive behaviour */
+    @media (min-width: 992px) {
+      .main-grid {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 28px;
+        align-items: start
+      }
+    }
+
+    /* small tweaks */
+    .socials a {
+      color: var(--muted);
+      margin-right: 10px
+    }
+
+    .btn-outline-accent {
+      border: 1px solid rgba(79, 131, 255, .15);
+      background: transparent;
+      color: var(--accent2)
+    }
+
+    /* mobile: compact course list */
+    @media (max-width:767px) {
+      .course-card img {
+        height: 160px
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- ======= Site Wrap =======-->
-  <div class="site-wrap">
+  <!-- ======= Header ======= -->
+  <header class="fbs__net-navbar navbar navbar-expand-lg dark position-fixed w-100" aria-label="Navbar">
+    <div class="container d-flex align-items-center justify-content-between" style="height: 60px;">
 
-    <!-- ======= Header ======= -->
-    <header class="fbs__net-navbar navbar navbar-expand-lg dark position-fixed" aria-label="Navbar">
-      <div class="container d-flex align-items-center justify-content-between" style="height: 60px;">
-        <!-- Start Logo -->
-        <a class="navbar-brand w-auto" href="index.html">
-          <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
-          <img class="logo light img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg" alt="Logo">
+      <!-- Start Logo -->
+      <a class="navbar-brand w-auto" href="index.html">
+        <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
+        <img class="logo light img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg" alt="Logo">
+      </a>
+      <!-- End Logo -->
+
+      <!-- Start Offcanvas Nav -->
+      <div class="offcanvas offcanvas-start w-75" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+          <a class="logo-link" id="mobileNavLabel" href="index.html">
+            <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg" alt="Logo">
+            <img class="logo light img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
+          </a>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body align-items-lg-center">
+          <ul class="navbar-nav mx-auto text-center fw-bold">
+            <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="./about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="./courses.html">Courses</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./staffs.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Offcanvas Nav -->
+
+      <!-- Buttons -->
+      <div class="d-flex align-items-center gap-2 sign-btns">
+        <a class="p-0 text-black" href="#login" style="text-decoration: none;">Log In</a>
+        <a class="btn rounded-pill px-3 btn-sm d-flex align-items-center" style="color: white !important; height: 30px;"
+          href="#signup">
+          Sign Up
         </a>
-        <!-- End Logo -->
 
-        <!-- Start offcanvas nav -->
-        <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1"
-          aria-labelledby="fbs__net-navbarsLabel">
-          <div class="offcanvas-header">
-            <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
-              <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg" alt="Logo">
-              <img class="logo light img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
-            </a>
-            <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
-          </div>
-
-          <div class="offcanvas-body align-items-lg-center">
-            <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0 mx-auto text-center fw-bold">
-              <li class="nav-item"><a class="nav-link scroll-link" href="./index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link scroll-link" href="#about">About Us</a></li>
-              <li class="nav-item"><a class="nav-link scroll-link" href="./courses.html">Course</a></li>
-              <li class="nav-item"><a class="nav-link scroll-link active" href="./staffs.html">Team</a></li>
-              <li class="nav-item"><a class="nav-link scroll-link" href="./contact.html">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- End offcanvas nav -->
-
-        <!-- Buttons -->
-        <div class="d-flex align-items-center gap-2 sign-btns">
-          <a class="p-0 text-black" href="#login" style="text-decoration: none;">Log In</a>
-          <a class="btn rounded-pill px-3 btn-sm d-flex align-items-center"
-            style="color: white !important; height: 30px;" href="#signup">Sign
-            Up</a>
-
-          <button class="fbs__net-navbar-toggler ms-2" data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars"
-            aria-controls="fbs__net-navbars" aria-label="Toggle navigation">
-            <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <line x1="21" y1="6" x2="3" y2="6"></line>
-              <line x1="15" y1="12" x2="3" y2="12"></line>
-              <line x1="17" y1="18" x2="3" y2="18"></line>
-            </svg>
-          </button>
-
-        </div>
-      </div>
-    </header>
-    <!-- End Header -->
-
-
-  <!-- Back link -->
-  <div class="container py-4 mt-5">
-    <a href="index.html" class="text-decoration-none text-muted small">
-      ← Back to All Instructors
-    </a>
-  </div>
-
-
-  <!-- Profile Section -->
-  <section class="container pb-5">
-    <div class="row g-4">
-
-      <!-- Left Profile Card -->
-      <div class="col-lg-4">
-        <div class="card border-0 shadow-sm rounded-4 text-center p-4">
-          <img src="https://i.pravatar.cc/220?img=5" alt="Dr. Angela Yu" class="profile-photo mb-3 rounded">
-          <h3 class="fw-semibold mb-0">Dr. Angela Yu</h3>
-          <p class="text-muted small mb-3">Developer & Lead Instructor</p>
-
-          <div class="d-flex justify-content-center gap-4 mb-4">
-            <div>
-              <h5 class="fw-bold mb-0">4.7</h5>
-              <small class="text-muted">Rating</small>
-            </div>
-            <div>
-              <h5 class="fw-bold mb-0">3.3M</h5>
-              <small class="text-muted">Students</small>
-            </div>
-            <div>
-              <h5 class="fw-bold mb-0">1.01M</h5>
-              <small class="text-muted">Reviews</small>
-            </div>
-          </div>
-
-          <a href="#courses" class="btn btn-primary w-100 rounded-pill mb-2">View Courses</a>
-          <a href="#reviews" class="btn btn-outline-secondary w-100 rounded-pill">See Reviews</a>
-        </div>
-
-        <div class="card border-0 shadow-sm rounded-4 mt-4">
-          <div class="card-body">
-            <h6 class="fw-bold mb-2 text-primary">Teaching Philosophy</h6>
-            <p class="text-muted small mb-0">
-              I spend most of my time researching how to make learning to code fun and make hard concepts easy to
-              understand. Expect lots of projects, explanations, and a touch of geeky humour.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Section -->
-      <div class="col-lg-8">
-
-        <!-- About -->
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
-          <div class="card-body">
-            <h4 class="fw-bold mb-3">About</h4>
-            <p>
-              I'm Angela, a developer with a passion for teaching. I'm the lead instructor at the London App Brewery,
-              London's leading Programming Bootcamp. I've helped hundreds of thousands of students learn to code and
-              change their lives by becoming developers.
-            </p>
-            <p>
-              My first foray into programming was at age 12 when I wanted to build my own Space Invader game. Since
-              then, I've made hundreds of websites, apps, and games — but my greatest passion is teaching.
-            </p>
-            <p class="mb-0">
-              I apply everything I learn about effective teaching to my courses — from humour to hands-on projects —
-              making complex concepts simple and fun.
-            </p>
-          </div>
-        </div>
-
-        <!-- Reviews -->
-        <div id="reviews" class="card border-0 shadow-sm rounded-4 mb-4">
-          <div class="card-body">
-            <h5 class="fw-bold mb-3">Latest Reviews</h5>
-
-            <div class="list-group list-group-flush">
-              <div class="list-group-item border-0 border-bottom">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <strong>Fernando Luiz D.</strong>
-                    <div class="small text-muted">2 weeks ago</div>
-                  </div>
-                  <div class="small text-warning">⭐ 4.0</div>
-                </div>
-                <p class="small text-muted mt-2 mb-0">
-                  Really good course. It is very complete, but some parts are outdated. The React Module is outdated
-                  and
-                  I had to learn elsewhere. But overall, the quality is great.
-                </p>
-              </div>
-
-              <div class="list-group-item border-0 border-bottom">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <strong>Carlos Alfonso C.</strong>
-                    <div class="small text-muted">4 weeks ago</div>
-                  </div>
-                  <div class="small text-warning">⭐ 5.0</div>
-                </div>
-                <p class="small text-muted mt-2 mb-0">
-                  Amazing course! Thank you Angela for this experience. I've learned a lot. Kind regards, CC.
-                </p>
-              </div>
-
-              <div class="list-group-item border-0">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <strong>John P K.</strong>
-                    <div class="small text-muted">1 month ago</div>
-                  </div>
-                  <div class="small text-warning">⭐ 5.0</div>
-                </div>
-                <p class="small text-muted mt-2 mb-0">
-                  This course was packed with valuable information. Dr. Angela Yu is an excellent teacher. I always
-                  enjoy her courses.
-                </p>
-              </div>
-            </div>
-
-            <div class="mt-3 text-end">
-              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill">View All Reviews</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Courses -->
-        <div id="courses">
-          <h5 class="fw-bold mb-3">Courses by Dr. Angela Yu</h5>
-
-          <div class="row g-3">
-            <!-- Course 1 -->
-            <div class="col-12 col-md-6">
-              <div class="card course-card border-0 shadow-sm rounded-4 h-100">
-                <div class="card-body d-flex align-items-start">
-                  <div class="thumb me-3" style="background-image:url('https://picsum.photos/seed/python/300/200')">
-                  </div>
-                  <div>
-                    <h6 class="fw-semibold mb-1">100 Days of Code: The Complete Python Pro Bootcamp</h6>
-                    <p class="small text-muted mb-1">56.5 hours • 597 lectures • All Levels</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <small class="text-muted">⭐ 4.7 (396,429)</small>
-                      <div class="text-end">
-                        <span class="fw-bold">₦13,900</span>
-                        <a href="#" class="btn btn-sm btn-primary ms-2 rounded-pill">Enroll</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Course 2 -->
-            <div class="col-12 col-md-6">
-              <div class="card course-card border-0 shadow-sm rounded-4 h-100">
-                <div class="card-body d-flex align-items-start">
-                  <div class="thumb me-3" style="background-image:url('https://picsum.photos/seed/ios/300/200')">
-                  </div>
-                  <div>
-                    <h6 class="fw-semibold mb-1">iOS & Swift - The Complete iOS App Development Bootcamp</h6>
-                    <p class="small text-muted mb-1">60.5 hours • 542 lectures • All Levels</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <small class="text-muted">⭐ 4.7 (95,549)</small>
-                      <div class="text-end">
-                        <span class="fw-bold">₦19,900</span>
-                        <a href="#" class="btn btn-sm btn-primary ms-2 rounded-pill">Enroll</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Course 3 -->
-            <div class="col-12 col-md-6">
-              <div class="card course-card border-0 shadow-sm rounded-4 h-100">
-                <div class="card-body d-flex align-items-start">
-                  <div class="thumb me-3" style="background-image:url('https://picsum.photos/seed/flutter/300/200')">
-                  </div>
-                  <div>
-                    <h6 class="fw-semibold mb-1">The Complete Flutter Development Bootcamp with Dart</h6>
-                    <p class="small text-muted mb-1">29 hours • 217 lectures • All Levels</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <small class="text-muted">⭐ 4.5 (57,683)</small>
-                      <div class="text-end">
-                        <span class="fw-bold">₦19,900</span>
-                        <a href="#" class="btn btn-sm btn-primary ms-2 rounded-pill">Enroll</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+        <!-- Mobile Nav Toggle -->
+        <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <footer class="py-5 custom-footer" id="footer">
-    <div class="container">
-      <div class="row g-4 align-items-start">
-
-        <!-- Branding -->
-        <div class="col-lg-4">
-          <img src="assets/public/IMAGES/logos/footer-logo.svg" alt="ARVYS Logo" class="img-fluid mb-3"
-            style="max-width: 120px;">
-          <h2 class="mb-0 text-white">
-            The No. 1 Tech Academy for tertiary students.
-          </h2>
-          <p class="text-white small" style="width: 85%;">
-            At ARVYS, we operate with the belief that excellence is attainable through consistency.
-          </p>
+  <!-- End Header -->
+  <div class="container py-5 mt-5">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <div class="training-card">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+              <div class="fw-bold">Brand</div>
+              <div class=" d-none d-md-block">/ Instructors</div>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-light">Share</button>
+              <button class="btn btn-sm btn-primary">Follow</button>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Quick Links -->
-        <div class="col-6 col-lg-2">
-          <h6 class="fw-semibold mb-3 text-white">Quick Links</h6>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none text-white">Home</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Courses</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Team</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Blog</a></li>
-          </ul>
-        </div>
+    <!-- top nav small -->
+    <nav class="mb-4">
 
-        <!-- Company Links -->
-        <div class="col-6 col-lg-2">
-          <h6 class="fw-semibold mb-3 text-white">Company</h6>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none text-white">About Us</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Contact Us</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Privacy Policy</a></li>
-          </ul>
-        </div>
+    </nav>
 
-        <!-- Newsletter (takes more space) -->
-        <div class="col-lg-4">
-          <h6 class="fw-semibold mb-3 text-white">Join Our Newsletter</h6>
-          <form class="input-group">
-            <input type="email" class="form-control bg-white rounded-start-pill" placeholder="Enter your email"
-              required>
-            <button type="submit" class="btn rounded-end-pill" style="background-color: #6C65EF;">
-              Subscribe
-            </button>
-          </form>
+    <!-- content grid -->
+    <div class="main-grid">
 
-          <div class="mt-3">
-            <img src="./assets/public/IMAGES/footer-circle.svg" alt="">
-            <img src="./assets/public/IMAGES/footer-circle.svg" alt="">
-            <img src="./assets/public/IMAGES/footer-circle.svg" alt="">
+      <!-- LEFT SIDEBAR (desktop) / TOP (mobile) -->
+      <aside>
+        <div class="sidebar-card mb-4">
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=600&auto=format&fit=crop&q=60"
+              alt="avatar" class="profile-avatar">
+            <div>
+              <h5 class="mb-0">Marco Kelly</h5>
+              <div class="text-muted small">marco@designstudio.com</div>
+              <div class="mt-2 rating">★★★★★ <span class="small text-muted">(4.9 · 2.3k)</span></div>
+            </div>
+          </div>
+
+          <hr class="my-3">
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-accent btn-sm">Book 1:1 session</button>
+            <button class="btn btn-outline-accent btn-sm">Message</button>
+          </div>
+
+          <hr class="my-3">
+
+          <div class="small text-muted mb-2">Skills</div>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="pill">UX Design</span>
+            <span class="pill">Product</span>
+            <span class="pill">Figma</span>
+          </div>
+
+          <div class="small text-muted">Communities</div>
+          <div class="d-flex gap-2 mt-2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
+              style="width:28px;height:28px;border-radius:50%" />
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
+              style="width:28px;height:28px;border-radius:50%" />
+            <div class="small text-muted ms-2">Design • Marketing</div>
           </div>
 
         </div>
-      </div>
 
-      <hr class="my-4 border-muted">
+        <!-- mobile CTA card (visible below on mobile) -->
+        <div class="d-lg-none sidebar-card mb-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-semibold">Mini CTA</div>
+              <div class="small text-muted">Schedule a quick session</div>
+            </div>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </div>
+        </div>
 
-      <div class="text-center small text-white">
-        &copy;
-        <script>document.write(new Date().getFullYear())</script> ARVYS. All Rights Reserved.
-      </div>
+      </aside>
+
+      <!-- MAIN AREA -->
+      <main>
+
+        <!-- hero about -->
+        <div class="profile-hero mb-4">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="mb-1">Marco Kelly</h2>
+              <div class="small text-white-50 mb-2">Senior Marketing Instructor</div>
+              <p class="mb-2" style="max-width:680px; color:rgba(255,255,255,.92);">Marco is an experienced marketing
+                professional with over 10 years of experience working with cross-functional teams to launch products and
+                grow audiences. He teaches practical, hands-on classes and mentorship sessions.</p>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-light btn-sm">Follow</button>
+                <button class="btn btn-outline-light btn-sm">Contact</button>
+              </div>
+            </div>
+
+            <div class="col-lg-4 d-none d-lg-block text-end">
+              <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=420&auto=format&fit=crop&q=60"
+                style="width:140px; border-radius:10px; object-fit:cover;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- action / sessions on top (desktop shows in sidebar, mobile shows here) -->
+        <div class="d-none d-lg-flex gap-3 mb-4">
+          <div class="p-3" style="background:#fff;border-radius:10px;flex:1;">60 mins 1:1 session<br><small
+              class="text-muted">Introduction & Feedback</small></div>
+          <div class="p-3" style="background:#fff;border-radius:10px;flex:1;">30 mins 1:1 session<br><small
+              class="text-muted">Quick review</small></div>
+        </div>
+
+        <!-- Courses grid -->
+        <h5 class="mb-3">Courses</h5>
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4">
+            <div class="course-card">
+              <img src="https://images.unsplash.com/photo-1526378725547-7c0b0b5c1f9b?w=900&auto=format&fit=crop&q=60"
+                alt="course">
+              <div class="card-body">
+                <h6 class="mb-1">Digital Marketing Fundamentals</h6>
+                <div class="small text-muted mb-2">Marketing · Beginner</div>
+                <p class="small text-muted">Short course that covers the basics of digital marketing and social media.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="course-card">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
+                alt="course">
+              <div class="card-body">
+                <h6 class="mb-1">Brand Management Strategies</h6>
+                <div class="small text-muted mb-2">Strategy · Intermediate</div>
+                <p class="small text-muted">How to build brand positioning and messaging that resonates.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="course-card">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&auto=format&fit=crop&q=60"
+                alt="course">
+              <div class="card-body">
+                <h6 class="mb-1">Trends in Digital Marketing</h6>
+                <div class="small text-muted mb-2">Trends · Advanced</div>
+                <p class="small text-muted">Latest trends and frameworks shaping marketing in 2025.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="course-card">
+              <img src="https://images.unsplash.com/photo-1532619675605-5b4b3b6f0c77?w=900&auto=format&fit=crop&q=60"
+                alt="course">
+              <div class="card-body">
+                <h6 class="mb-1">Social Media Marketing</h6>
+                <div class="small text-muted mb-2">Social · Beginner</div>
+                <p class="small text-muted">How to run campaigns and measure impact on social platforms.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
     </div>
-  </footer>
+
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
