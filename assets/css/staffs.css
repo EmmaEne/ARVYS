@@ -126,3 +126,11 @@
 .carousel-item {
     transition: transform 0.8s ease-in-out;
 }
+
+@media (max-width: 576px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
