@@ -77,6 +77,9 @@ input::placeholder {
 }
 
 @media (max-width: 576px) {
+  .training-card {
+    padding: 50px 0px;
+  }
   .contact-image {
     text-align: left !important;
     height: 150px;
