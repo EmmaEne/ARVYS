@@ -8,92 +8,11 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
   <link rel="stylesheet" href="./assets/css/contact.css">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <style>
-    /* layout */
-    .profile-hero {
-      background: linear-gradient(190deg, var(--accent1), var(--accent2));
-      color: #fff;
-      padding: 42px 24px;
-      border-radius: 12px;
-    }
-
-    .profile-avatar {
-      width: 112px;
-      height: 112px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 4px solid rgba(255, 255, 255, .12);
-    }
-
-    .sidebar-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(13, 38, 70, 0.06);
-      padding: 20px;
-    }
-
-    .rating {
-      color: #f3c24b;
-      font-weight: 600
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 6px 10px;
-      background: #f4f6ff;
-      color: var(--accent2);
-      border-radius: 999px;
-      font-weight: 600;
-    }
-
-    .course-card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(13, 38, 70, 0.04);
-    }
-
-    .course-card img {
-      height: 130px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    .course-card .card-body {
-      padding: 14px
-    }
-
-    /* responsive behaviour */
-    @media (min-width: 992px) {
-      .main-grid {
-        display: grid;
-        grid-template-columns: 320px 1fr;
-        gap: 28px;
-        align-items: start
-      }
-    }
-
-    /* small tweaks */
-    .socials a {
-      color: var(--muted);
-      margin-right: 10px
-    }
-
-    .btn-outline-accent {
-      border: 1px solid rgba(79, 131, 255, .15);
-      background: transparent;
-      color: var(--accent2)
-    }
-
-    /* mobile: compact course list */
-    @media (max-width:767px) {
-      .course-card img {
-        height: 160px
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/staff-details.css">
 </head>
 
 <body>
@@ -148,176 +67,163 @@
     </div>
   </header>
 
-  <!-- End Header -->
-  <div class="container py-5 mt-5">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
-        <div class="training-card">
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center gap-3">
-              <div class="fw-bold">Brand</div>
-              <div class=" d-none d-md-block">/ Instructors</div>
+
+
+  <!-- top nav small -->
+  <nav class="mb-4 nav container py-5 mt-5"></nav>
+
+  <!-- content grid -->
+  <div class="main-grid container py-5">
+    <!-- LEFT SIDEBAR (desktop) / TOP (mobile) -->
+    <aside>
+      <div class="sidebar-card mb-4">
+        <div class="d-flex align-items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=600&auto=format&fit=crop&q=60"
+            alt="avatar" class="profile-avatar">
+          <div>
+            <h5 class="mb-0">Marco Kelly</h5>
+            <div class="text-muted small">marco@designstudio</div>
+            <div class="mt-2 rating">★★★★★ <span class="small text-muted">(4.9 · 2.3k)</span></div>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="d-grid gap-2">
+          <a href="#courses" class="btn btn-primary w-100 rounded-pill mb-2">View Courses</a>
+          <a href="#reviews" class="btn btn-outline-secondary w-100 rounded-pill">See Reviews</a>
+        </div>
+
+        <hr class="my-3">
+
+        <div class="small text-muted mb-2">Skills</div>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="pill">UX Design</span>
+          <span class="pill">Product</span>
+          <span class="pill">Figma</span>
+        </div>
+
+        <div class="small text-muted">Communities</div>
+        <div class="d-flex gap-2 mt-2">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
+            style="width:28px;height:28px;border-radius:50%" />
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
+            style="width:28px;height:28px;border-radius:50%" />
+          <div class="small text-muted ms-2">Design • Marketing</div>
+        </div>
+
+      </div>
+
+      <!-- mobile CTA card (visible below on mobile) -->
+      <div class="d-lg-none sidebar-card mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="fw-semibold">Mini CTA</div>
+            <div class="small text-muted">Schedule a quick session</div>
+          </div>
+          <button class="btn btn-primary btn-sm">Book</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main>
+
+      <!-- hero about -->
+      <div class="profile-hero">
+        <div class="row align-items-center">
+          <div class="col-lg-11">
+            <h2 class="mb-1 mt-4">Marco Kelly</h2>
+            <div class="small text-white-50 mb-2">Senior Marketing Instructor</div>
+            <p class="mb-2" style="max-width:680px; color:rgba(255,255,255,.92);">Marco is an experienced marketing
+              professional with over 10 years of experience working with cross-functional teams to launch products and
+              grow audiences. He teaches practical, hands-on classes and mentorship sessions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- action / sessions on top (desktop shows in sidebar, mobile shows here) -->
+      <div class="row g-3 d-flex justify-content-between" style="padding: 20px;">
+        <div class="col-md-6 col-lg-6">
+          <div class="course-card position-relative">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
+              alt="course" class="img-fluid rounded">
+            <div class="play-btn position-absolute top-50 start-50 translate-middle">
+              <i class="bi bi-play-fill"></i>
             </div>
-            <div class="d-flex gap-2">
-              <button class="btn btn-sm btn-light">Share</button>
-              <button class="btn btn-sm btn-primary">Follow</button>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6">
+          <div class="course-card position-relative">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
+              alt="course" class="img-fluid rounded">
+            <div class="play-btn position-absolute top-50 start-50 translate-middle">
+              <i class="bi bi-play-fill"></i>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- top nav small -->
-    <nav class="mb-4">
 
-    </nav>
-
-    <!-- content grid -->
-    <div class="main-grid">
-
-      <!-- LEFT SIDEBAR (desktop) / TOP (mobile) -->
-      <aside>
-        <div class="sidebar-card mb-4">
-          <div class="d-flex align-items-center gap-3">
-            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=600&auto=format&fit=crop&q=60"
-              alt="avatar" class="profile-avatar">
-            <div>
-              <h5 class="mb-0">Marco Kelly</h5>
-              <div class="text-muted small">marco@designstudio.com</div>
-              <div class="mt-2 rating">★★★★★ <span class="small text-muted">(4.9 · 2.3k)</span></div>
-            </div>
-          </div>
-
-          <hr class="my-3">
-
-          <div class="d-grid gap-2">
-            <button class="btn btn-outline-accent btn-sm">Book 1:1 session</button>
-            <button class="btn btn-outline-accent btn-sm">Message</button>
-          </div>
-
-          <hr class="my-3">
-
-          <div class="small text-muted mb-2">Skills</div>
-          <div class="d-flex flex-wrap gap-2 mb-3">
-            <span class="pill">UX Design</span>
-            <span class="pill">Product</span>
-            <span class="pill">Figma</span>
-          </div>
-
-          <div class="small text-muted">Communities</div>
-          <div class="d-flex gap-2 mt-2">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
-              style="width:28px;height:28px;border-radius:50%" />
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
-              style="width:28px;height:28px;border-radius:50%" />
-            <div class="small text-muted ms-2">Design • Marketing</div>
-          </div>
-
-        </div>
-
-        <!-- mobile CTA card (visible below on mobile) -->
-        <div class="d-lg-none sidebar-card mb-4">
-          <div class="d-flex justify-content-between align-items-center">
-            <div>
-              <div class="fw-semibold">Mini CTA</div>
-              <div class="small text-muted">Schedule a quick session</div>
-            </div>
-            <button class="btn btn-primary btn-sm">Book</button>
-          </div>
-        </div>
-
-      </aside>
-
-      <!-- MAIN AREA -->
-      <main>
-
-        <!-- hero about -->
-        <div class="profile-hero mb-4">
-          <div class="row align-items-center">
-            <div class="col-lg-8">
-              <h2 class="mb-1">Marco Kelly</h2>
-              <div class="small text-white-50 mb-2">Senior Marketing Instructor</div>
-              <p class="mb-2" style="max-width:680px; color:rgba(255,255,255,.92);">Marco is an experienced marketing
-                professional with over 10 years of experience working with cross-functional teams to launch products and
-                grow audiences. He teaches practical, hands-on classes and mentorship sessions.</p>
-              <div class="d-flex gap-2 mt-3">
-                <button class="btn btn-light btn-sm">Follow</button>
-                <button class="btn btn-outline-light btn-sm">Contact</button>
-              </div>
-            </div>
-
-            <div class="col-lg-4 d-none d-lg-block text-end">
-              <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=420&auto=format&fit=crop&q=60"
-                style="width:140px; border-radius:10px; object-fit:cover;" />
+      <!-- Courses grid -->
+      <h5 class="mb-3">Courses</h5>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
+              alt="co            urse">
+            <div class="card-body">
+              <h6 class="mb-1">Digital Marketing Fundamentals</h6>
+              <div class="small text-muted mb-2">Marketing · Beginner</div>
+              <p class="small text-muted">Short course that covers the basics of digital marketing and social media.
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- action / sessions on top (desktop shows in sidebar, mobile shows here) -->
-        <div class="d-none d-lg-flex gap-3 mb-4">
-          <div class="p-3" style="background:#fff;border-radius:10px;flex:1;">60 mins 1:1 session<br><small
-              class="text-muted">Introduction & Feedback</small></div>
-          <div class="p-3" style="background:#fff;border-radius:10px;flex:1;">30 mins 1:1 session<br><small
-              class="text-muted">Quick review</small></div>
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
+              alt="course">
+            <div class="card-body">
+              <h6 class="mb-1">Brand Management Strategies</h6>
+              <div class="small text-muted mb-2">Strategy · Intermediate</div>
+              <p class="small text-muted">How to build brand positioning and messaging that resonates.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Courses grid -->
-        <h5 class="mb-3">Courses</h5>
-        <div class="row g-3">
-          <div class="col-md-6 col-lg-4">
-            <div class="course-card">
-              <img src="https://images.unsplash.com/photo-1526378725547-7c0b0b5c1f9b?w=900&auto=format&fit=crop&q=60"
-                alt="course">
-              <div class="card-body">
-                <h6 class="mb-1">Digital Marketing Fundamentals</h6>
-                <div class="small text-muted mb-2">Marketing · Beginner</div>
-                <p class="small text-muted">Short course that covers the basics of digital marketing and social media.
-                </p>
-              </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&auto=format&fit=crop&q=60"
+              alt="course">
+            <div class="card-body">
+              <h6 class="mb-1">Brand Management Strategies</h6>
+              <div class="small text-muted mb-2">Strategy · Intermediate</div>
+              <p class="small text-muted">How to build brand positioning and messaging that resonates.</p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="course-card">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
-                alt="course">
-              <div class="card-body">
-                <h6 class="mb-1">Brand Management Strategies</h6>
-                <div class="small text-muted mb-2">Strategy · Intermediate</div>
-                <p class="small text-muted">How to build brand positioning and messaging that resonates.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="course-card">
-              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&auto=format&fit=crop&q=60"
-                alt="course">
-              <div class="card-body">
-                <h6 class="mb-1">Trends in Digital Marketing</h6>
-                <div class="small text-muted mb-2">Trends · Advanced</div>
-                <p class="small text-muted">Latest trends and frameworks shaping marketing in 2025.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="course-card">
-              <img src="https://images.unsplash.com/photo-1532619675605-5b4b3b6f0c77?w=900&auto=format&fit=crop&q=60"
-                alt="course">
-              <div class="card-body">
-                <h6 class="mb-1">Social Media Marketing</h6>
-                <div class="small text-muted mb-2">Social · Beginner</div>
-                <p class="small text-muted">How to run campaigns and measure impact on social platforms.</p>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-      </main>
+        <div class="col-md-6 col-lg-4">
+          <div class="course-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
+              alt="course">
+            <div class="card-body">
+              <h6 class="mb-1">Social Media Marketing</h6>
+              <div class="small text-muted mb-2">Social · Beginner</div>
+              <p class="small text-muted">How to run campaigns and measure impact on social platforms.</p>
+            </div>
+          </div>
+        </div>
 
-    </div>
+      </div>
+
+    </main>
+
+  </div>
 
   </div>
 

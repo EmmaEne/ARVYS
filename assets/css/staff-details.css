@@ -1,0 +1,111 @@
+.nav {
+    width: 100%;
+    height: 80px !important;
+    background: linear-gradient(to right, #D8B5FF, #1EAE98);
+}
+
+.main-grid {
+    position: relative;
+    bottom: 100px;
+}
+
+/* layout */
+.profile-hero {
+    background: linear-gradient(190deg, var(--accent1), var(--accent2));
+    color: #fff;
+    padding: 42px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -4px rgba(243, 242, 242, 0.808);
+}
+
+.profile-avatar {
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid rgba(255, 255, 255, .12);
+}
+
+.sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(248, 248, 249, 0.742);
+    padding: 20px;
+}
+
+.rating {
+    color: #f3c24b;
+    font-weight: 600
+}
+
+.pill {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #f4f6ff;
+    color: var(--accent2);
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.play-btn {
+    background: rgba(0, 0, 0, 0.4);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    transition: background 0.3s ease;
+}
+
+.video-card:hover .play-btn {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(13, 38, 70, 0.04);
+}
+
+.course-card img {
+    height: 130px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.course-card .card-body {
+    padding: 14px
+}
+
+/* responsive behaviour */
+@media (min-width: 992px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 28px;
+        align-items: start
+    }
+}
+
+/* small tweaks */
+.socials a {
+    color: var(--muted);
+    margin-right: 10px
+}
+
+.btn-outline-accent {
+    border: 1px solid rgba(79, 131, 255, .15);
+    background: transparent;
+    color: var(--accent2)
+}
+
+/* mobile: compact course list */
+@media (max-width:767px) {
+    .course-card img {
+        height: 160px
+    }
+}
