@@ -31,6 +31,8 @@
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(248, 248, 249, 0.742);
     padding: 20px;
+    padding-bottom: 50px;
+    border: 1px solid #f4f6ff;
 }
 
 .rating {
@@ -46,6 +48,63 @@
     border-radius: 999px;
     font-weight: 600;
 }
+
+#courses {
+    background-color: #f4f6ff;
+    border: 1px solid #d4dcff;
+    color: black;
+}
+
+#courses:hover {
+    background-color: #b5c3ff !important;
+    border: 1px solid #f4f6ff !important;
+}
+
+#reviews {
+    border: solid;
+    background-color: #2e51ff;
+}
+
+.video-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* video-like shape */
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.video-thumb {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+
+.video-box:hover .video-thumb {
+    transform: scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 15px;
+    background-size: 60% 60%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
 
 .play-btn {
     background: rgba(0, 0, 0, 0.4);
