@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ARVYS Tech Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        /* Login Hero Section */
+        .login-hero {
+            background: linear-gradient(135deg, #0016C2 0%, #4444b5 100%);
+            padding: 50px 0 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .login-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-hero p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9) !important;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-header {
+            /* text-align: center; */
+            margin-bottom: 2rem;
+        }
+
+        .form-header .logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-header .logo img {
+            height: 44px;
+            width: auto;
+        }
+
+        .form-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #16181B;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: #646679 !important;
+            margin: 0;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #16181B;
+            margin-bottom: 0.5rem;
+            font-size: 0.9375rem;
+        }
+
+        .form-control {
+            padding: 0.875rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #c1c7f0;
+            box-shadow: 0 0 0 3px rgba(0, 22, 194, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        /* Password Field */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper .form-control {
+            padding-right: 3rem;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .password-toggle:hover {
+            color: #0016C2;
+        }
+
+        /* Form Options */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-check-input {
+            width: 1.125rem;
+            height: 1.125rem;
+            border: 2px solid #d0d0d0;
+            border-radius: 4px;
+        }
+
+        .form-check-input:checked {
+            background-color: #0016C2;
+            border-color: #0016C2;
+        }
+
+        .form-check-label {
+            color: #646679;
+            font-size: 0.9375rem;
+            margin-left: 0.25rem;
+        }
+
+        .forgot-link {
+            color: #0016C2;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .btn-login {
+            width: 100%;
+            padding: 0.9375rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #0016C2, #4444b5);
+            border: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 22, 194, 0.3);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 22, 194, 0.4);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 1.75rem 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .divider span {
+            padding: 0 1rem;
+            color: #999;
+            font-size: 0.875rem;
+        }
+
+        /* Social Buttons */
+        .social-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-social {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fff;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: #383842;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-social:hover {
+            border-color: #c1c7f0;
+            background: #fafafa;
+            color: #383842;
+        }
+
+        .btn-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Signup Link */
+        .signup-link {
+            text-align: center;
+            margin-top: 1.75rem;
+            font-size: 0.9375rem;
+            color: #646679;
+        }
+
+        .signup-link a {
+            color: #0016C2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, rgba(0, 22, 194, 0.05), rgba(68, 68, 181, 0.05));
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border-left: 4px solid #0016C2;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-box i {
+            color: #0016C2;
+            font-size: 1.25rem;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #646679 !important;
+        }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            .login-hero {
+                padding: 40px 0 70px 0;
+            }
+
+            .login-hero h1 {
+                font-size: 2rem;
+            }
+
+            .login-hero p {
+                font-size: 1rem;
+            }
+
+            .form-container {
+                padding: 2rem;
+                margin-top: -50px;
+                border-radius: 20px;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 576px) {
+            body {
+                background: #f8f9fc;
+            }
+
+            .login-hero {
+                padding: 32px 1rem 60px;
+            }
+
+            .login-hero h1 {
+                font-size: 1.625rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .login-hero p {
+                font-size: 0.9375rem;
+            }
+
+            .login-hero::before {
+                width: 200px;
+                height: 200px;
+                top: -60px;
+                right: -60px;
+            }
+
+            .form-container {
+                padding: 1.75rem 1.25rem;
+                margin: -40px 0.75rem 0;
+                border-radius: 16px;
+
+            }
+
+            .form-header {
+                margin-bottom: 1.5rem;
+            }
+
+            .form-header .logo {
+                margin-bottom: 1.25rem;
+            }
+
+            .form-header .logo img {
+                height: 36px;
+            }
+
+            .form-header h2 {
+                font-size: 1.25rem;
+                margin-bottom: 0.375rem;
+            }
+
+            .form-header p {
+                font-size: 0.875rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-label {
+                font-size: 0.875rem;
+                margin-bottom: 0.375rem;
+            }
+
+            .form-control {
+                padding: 0.8125rem 0.875rem;
+                font-size: 1rem;
+                border-radius: 10px;
+                border-width: 1.5px;
+            }
+
+            .password-toggle {
+                width: 44px;
+                height: 44px;
+                right: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .password-toggle i {
+                font-size: 1.125rem;
+            }
+
+            .form-options {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 0;
+                margin-bottom: 1.25rem;
+            }
+
+            .form-check {
+                display: flex;
+                align-items: center;
+            }
+
+            .form-check-input {
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-right: 0.5rem;
+            }
+
+            .form-check-label {
+                font-size: 0.875rem;
+                margin-left: 0;
+            }
+
+            .forgot-link {
+                font-size: 0.875rem;
+            }
+
+            .btn-login {
+                padding: 0.9375rem 1.25rem;
+                font-size: 1rem;
+                border-radius: 12px;
+            }
+
+            .divider {
+                margin: 1.5rem 0;
+            }
+
+            .divider span {
+                font-size: 0.8125rem;
+                padding: 0 0.75rem;
+            }
+
+            .social-btns {
+                gap: 0.75rem;
+            }
+
+            .btn-social {
+                padding: 0.75rem;
+                border-radius: 10px;
+                font-size: 0.875rem;
+                border-width: 1.5px;
+            }
+
+            .btn-social svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .signup-link {
+                margin-top: 1.5rem;
+                font-size: 0.875rem;
+            }
+
+            .info-box {
+                padding: 0.875rem 1rem;
+                border-radius: 10px;
+                margin-top: 1.25rem;
+            }
+
+            .info-box i {
+                font-size: 1.125rem;
+            }
+
+            .info-box p {
+                font-size: 0.8125rem;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 360px) {
+            .login-hero {
+                padding: 28px 0.75rem 50px;
+            }
+
+            .login-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .form-container {
+                padding: 1.5rem 1rem;
+                margin: -35px 0.5rem 0;
+            }
+
+            .form-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.625rem;
+            }
+
+            .social-btns {
+                flex-direction: column;
+            }
+
+            .btn-social {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="login-hero">
+        <div class="container text-center">
+
+        </div>
+    </section>
+
+    <!-- Login Form -->
+    <section class="pb-5">
+        <div class="container">
+            <div class="form-container">
+                <!-- Header -->
+                <div class="form-header">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="assets/public/IMAGES/logos/logo.svg" alt="ARVYS">
+                        </a>
+                    </div>
+                    <p>Enter your credentials below</h2>
+                </div>
+
+                <!-- Info Box -->
+                <div class="info-box mb-4">
+                    <i class="bi bi-shield-check"></i>
+                    <p>Your information is secure and encrypted</p>
+                </div>
+
+                <!-- Form -->
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                                required>
+                            <button type="button" class="password-toggle" onclick="togglePassword()">
+                                <i class="bi bi-eye" id="toggleIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-login">Sign In</button>
+                </form>
+
+
+
+                <!-- Signup Link -->
+                <p class="signup-link">
+                    Don't have an account? <a href="./it-register.html">Register</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function togglePassword() {
+            const password = document.getElementById('password');
+            const icon = document.getElementById('toggleIcon');
+
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.classList.replace('bi-eye', 'bi-eye-slash');
+            } else {
+                password.type = 'password';
+                icon.classList.replace('bi-eye-slash', 'bi-eye');
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Login functionality will be connected to your backend.');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,294 +1,387 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Instructor Profile — Clone</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-  <link rel="stylesheet" href="./assets/css/register.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/staff-details.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Details - ARVYS Tech Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/courses.css">
+    <link rel="stylesheet" href="./assets/css/staffs.css">
 </head>
 
-<body>
+<body class="staffs-page">
 
-  <!-- ======= Header ======= -->
-  <header class="fbs__net-navbar navbar navbar-expand-lg dark position-fixed w-100" aria-label="Navbar">
-    <div class="container d-flex align-items-center justify-content-between" style="height: 60px;">
+    <div class="site-wrap">
 
-      <!-- Start Logo -->
-      <a class="navbar-brand w-auto" href="index.html">
-        <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
-        <img class="logo light img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg" alt="Logo">
-      </a>
-      <!-- End Logo -->
+        <!-- ======= Header ======= -->
+        <header class="fbs__net-navbar navbar navbar-expand-lg dark position-fixed mb-5" aria-label="Navbar">
+            <div class="container d-flex align-items-center justify-content-between" style="height: 60px;">
+                <!-- Start Logo -->
+                <a class="navbar-brand w-auto" href="index.html">
+                    <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
+                    <img class="logo light img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg" alt="Logo">
+                </a>
+                <!-- End Logo -->
 
-      <!-- Start Offcanvas Nav -->
-      <div class="offcanvas offcanvas-start w-75" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
-        <div class="offcanvas-header">
-          <a class="logo-link" id="mobileNavLabel" href="index.html">
-            <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg" alt="Logo">
-            <img class="logo light img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
-          </a>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-
-        <div class="offcanvas-body align-items-lg-center">
-          <ul class="navbar-nav mx-auto text-center fw-bold">
-            <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="./about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="./courses.html">Courses</a></li>
-            <li class="nav-item"><a class="nav-link active" href="./staffs.html">Team</a></li>
-            <li class="nav-item"><a class="nav-link" href="./register.html">Register</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- End Offcanvas Nav -->
-
-      <!-- Buttons -->
-      <div class="d-flex align-items-center gap-2 sign-btns">
-        <a class="p-0 text-black" href="#login" style="text-decoration: none;">Log In</a>
-        <a class="btn rounded-pill px-3 btn-sm d-flex align-items-center" style="color: white !important; height: 30px;"
-          href="#signup">
-          Sign Up
-        </a>
-
-        <!-- Mobile Nav Toggle -->
-        <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-
-
-  <!-- top nav small -->
-  <nav class="mb-4 nav container py-5 mt-5"></nav>
-
-  <!-- content grid -->
-  <div class="main-grid container py-5">
-    <!-- LEFT SIDEBAR (desktop) / TOP (mobile) -->
-    <aside>
-      <div class="sidebar-card mb-4">
-        <div class="d-flex align-items-center gap-3">
-          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=600&auto=format&fit=crop&q=60"
-            alt="avatar" class="profile-avatar">
-          <div>
-            <h5 class="mb-0">Marco Kelly</h5>
-            <div class="text-muted small">marco@designstudio</div>
-            <div class="mt-2 rating">★★★★★ <span class="small text-muted">(4.9 · 2.3k)</span></div>
-          </div>
-        </div>
-
-        <br>
-
-        <div class="d-grid gap-2">
-          <a href="#courses" class="btn w-100 rounded-pill mb-2" id="courses">View Courses</a>
-          <a href="#reviews" class="btn btn-outline-secondary w-100 rounded-pill" id="reviews">See Reviews</a>
-        </div>
-
-        <hr class="my-3" style="margin-top: 40px !important;">
-
-        <div class="small text-muted mb-2">Skills</div>
-        <div class="d-flex flex-wrap gap-2 mb-3">
-          <span class="pill">UX Design</span>
-          <span class="pill">Product</span>
-          <span class="pill">Figma</span>
-        </div>
-
-        <div class="small text-muted">Communities</div>
-        <div class="d-flex gap-2 mt-2">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
-            style="width:28px;height:28px;border-radius:50%" />
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=48&h=48&fit=crop"
-            style="width:28px;height:28px;border-radius:50%" />
-          <div class="small text-muted ms-2">Design • Marketing</div>
-        </div>
-
-      </div>
-    </aside>
-
-    <!-- MAIN AREA -->
-    <main>
-
-      <!-- hero about -->
-      <div class="profile-hero">
-        <div class="row align-items-center">
-          <div class="col-lg-11">
-            <h2 class="mb-1">Marco Kelly</h2>
-            <div class="small text-white-50 mb-2">Senior Marketing Instructor</div>
-            <p class="mb-2" style="max-width:680px; color:rgba(255,255,255,.92);">Marco is an experienced marketing
-              professional with over 10 years of experience working with cross-functional teams to launch products and
-              grow audiences. He teaches practical, hands-on classes and mentorship sessions.</p>
-          </div>
-        </div>
-      </div>
-
-      <section class="video-section py-3">
-        <div class="container" style="padding-left: 30px; padding-right: 30px;">
-          <div class="row g-4 justify-content-center">
-            <h4 class="fw-bold">Here are some of his tutorials</h4>
-            <!-- Video 1 -->
-            <div class="col-md-6 col-lg-6">
-              <div class="video-box position-relative rounded-4 overflow-hidden shadow-sm">
-                <div class="video-thumb"
-                  style="background-image: url('./assets/images/business/business-img-1-min.jpg');">
-                </div>
-                <div class="play-btn position-absolute top-50 start-50 translate-middle">
-                  <i class="bi bi-play-fill"></i>
-                </div>
-              </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="col-md-6 col-lg-6">
-              <div class="video-box position-relative rounded-4 overflow-hidden shadow-sm">
-                <div class="video-thumb"
-                  style="background-image: url('./assets/images/business/business-img-10-min.jpg');">
-                </div>
-                <div class="play-btn position-absolute top-50 start-50 translate-middle">
-                  <i class="bi bi-play-fill"></i>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="py-5">
-        <div class="container">
-          <h4 class="mb-4 fw-bold px-3">Courses</h4>
-
-          <div id="coursesCarousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicators (desktop only) -->
-            <div class="carousel-indicators d-none d-md-flex">
-              <button type="button" data-bs-target="#coursesCarousel" data-bs-slide-to="0" class="active"></button>
-              <button type="button" data-bs-target="#coursesCarousel" data-bs-slide-to="1"></button>
-            </div>
-
-            <!-- Carousel Inner -->
-            <div class="carousel-inner">
-
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="row g-3 px-3">
-                  <div class="col-md-4">
-                    <div class="course-card h-100 shadow-sm rounded-4 overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&auto=format&fit=crop&q=60"
-                        class="w-100" alt="course">
-                      <div class="card-body p-3">
-                        <h6 class="mb-1">Digital Marketing Fundamentals</h6>
-                        <div class="small text-muted mb-2">Marketing · Beginner</div>
-                        <p class="small text-muted mb-0">Covers the basics of digital marketing and social media.</p>
-                      </div>
+                <!-- Start offcanvas nav -->
+                <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1"
+                    aria-labelledby="fbs__net-navbarsLabel">
+                    <div class="offcanvas-header">
+                        <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
+                            <img class="logo dark img-fluid" src="assets/public/IMAGES/logos/footer-logo.svg"
+                                alt="Logo">
+                            <img class="logo light img-fluid" src="assets/public/IMAGES/logos/logo.svg" alt="Logo">
+                        </a>
+                        <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
-                  </div>
 
-                  <div class="col-md-4">
-                    <div class="course-card h-100 shadow-sm rounded-4 overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&auto=format&fit=crop&q=60"
-                        class="w-100" alt="course">
-                      <div class="card-body p-3">
-                        <h6 class="mb-1">Brand Management Strategies</h6>
-                        <div class="small text-muted mb-2">Strategy · Intermediate</div>
-                        <p class="small text-muted mb-0">How to build brand positioning and messaging that resonates.
+                    <div class="offcanvas-body align-items-lg-center">
+                        <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0 mx-auto text-center fw-bold">
+                            <li class="nav-item"><a class="nav-link scroll-link" href="./index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="./about.html">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="./courses.html">Course</a></li>
+                            <li class="nav-item"><a class="nav-link scroll-link active" href="./staffs.html">Team</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link scroll-link" href="./it-register.html">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End offcanvas nav -->
+
+                <!-- Buttons -->
+                <div class="d-flex align-items-center gap-2 sign-btns">
+                    <a class="p-0 text-black" href="./login.html" style="text-decoration: none;">Log In</a>
+                    <a class="btn rounded-pill px-3 btn-sm d-flex align-items-center"
+                        style="color: white !important; height: 30px;" href="./it-register.html">Register</a>
+
+                    <button class="fbs__net-navbar-toggler ms-2" data-bs-toggle="offcanvas"
+                        data-bs-target="#fbs__net-navbars" aria-controls="fbs__net-navbars"
+                        aria-label="Toggle navigation">
+                        <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="21" y1="6" x2="3" y2="6"></line>
+                            <line x1="15" y1="12" x2="3" y2="12"></line>
+                            <line x1="17" y1="18" x2="3" y2="18"></line>
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Hero Section -->
+        <section class="contact-image mt-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <img src="./assets/images/ella1.png" alt="Office" class="hero-img" />
+                        <div class="training-card container">
+                            <div class="row align-items-start">
+                                <!-- Left Side: Content -->
+                                <div class="col-md-12">
+                                    <div class="content">
+                                        <h1 class="fw-bold display-5 mb-3">
+                                            Chinedu <span class="text-accent">Okoro</span>
+                                        </h1>
+                                        <p class="lead text-muted mb-4">
+                                            Senior Full Stack Developer & Tech Educator <br> 8+ years of experience
+                                            training over 1,200
+                                            students
+                                        </p>
+                                        <a href="#" class="btn btn-primary mt-3">View Courses <img
+                                                src="./assets/images/ri_arrow-up-line.png" alt="" srcset=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="py-3 about__v4 section mt-5 mb-5">
+            <div class="container text-center">
+                <div class="campuses-line">
+                    <h2 class="fw-bold mb-0" style="color: #383842;">INSTRUCTOR STATS</h2>
+                    <div class="campus-circles">
+                        <div class="campus-circle"></div>
+                        <div class="campus-circle"></div>
+                        <div class="campus-circle"></div>
+                        <div class="campus-circle"></div>
+                        <div class="campus-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Cards -->
+        <section class="section">
+            <div class="container">
+                <div class="row g-4 justify-content-center text-center mb-5">
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 bg-light rounded-3">
+                            <h2 class="fw-bold mb-2" style="color: #383842;">1,200+</h2>
+                            <p class="text-muted mb-0">Students Taught</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 bg-light rounded-3">
+                            <h2 class="fw-bold mb-2" style="color: #383842;">4.9/5</h2>
+                            <p class="text-muted mb-0">Average Rating</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 bg-light rounded-3">
+                            <h2 class="fw-bold mb-2" style="color: #383842;">12+</h2>
+                            <p class="text-muted mb-0">Courses</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4 bg-light rounded-3">
+                            <h2 class="fw-bold mb-2" style="color: #383842;">8 Years</h2>
+                            <p class="text-muted mb-0">Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section py-5">
+            <div class="container">
+                <h3 class="text-center mb-5 fw-bold">About the Instructor</h3>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <h4 class="fw-bold mb-3">Background</h4>
+                        <p class="text-muted">
+                            Chinedu is a seasoned full-stack developer with over 8 years of experience building scalable
+                            web
+                            applications for startups and Fortune 500 companies. His passion for teaching stems from his
+                            belief
+                            that anyone can learn to code with the right guidance and dedication.
                         </p>
-                      </div>
+                        <p class="text-muted">
+                            He specializes in making complex concepts simple and digestible. Throughout his career, he
+                            has trained
+                            over 1,200 students who now work at companies like Google, Microsoft, and various local tech
+                            startups.
+                        </p>
                     </div>
-                  </div>
 
-                  <div class="col-md-4">
-                    <div class="course-card h-100 shadow-sm rounded-4 overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&auto=format&fit=crop&q=60"
-                        class="w-100" alt="course">
-                      <div class="card-body p-3">
-                        <h6 class="mb-1">Social Media Marketing</h6>
-                        <div class="small text-muted mb-2">Social · Beginner</div>
-                        <p class="small text-muted mb-0">Learn how to run and measure social media campaigns.</p>
-                      </div>
+                    <div class="col-lg-6">
+                        <h4 class="fw-bold mb-3">Professional Experience</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <strong>Senior Full Stack Instructor</strong>
+                                <p class="text-muted mb-1">ARVYS Tech Academy • 2020 - Present</p>
+                                <small class="text-muted">Leading curriculum development and teaching advanced
+                                    full-stack development
+                                    courses.</small>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Lead Developer</strong>
+                                <p class="text-muted mb-1">TechBridge Solutions • 2017 - 2020</p>
+                                <small class="text-muted">Led a team of 8 developers in building enterprise web
+                                    applications.</small>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Full Stack Developer</strong>
+                                <p class="text-muted mb-1">Digital Innovations Ltd • 2015 - 2017</p>
+                                <small class="text-muted">Developed scalable web applications using modern
+                                    frameworks.</small>
+                            </li>
+                        </ul>
                     </div>
-                  </div>
                 </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="row g-3 px-3">
-                  <div class="col-md-4">
-                    <div class="course-card h-100 shadow-sm rounded-4 overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&auto=format&fit=crop&q=60"
-                        class="w-100" alt="course">
-                      <div class="card-body p-3">
-                        <h6 class="mb-1">SEO Optimization Mastery</h6>
-                        <div class="small text-muted mb-2">Marketing · Intermediate</div>
-                        <p class="small text-muted mb-0">Learn proven SEO techniques that boost visibility.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="course-card h-100 shadow-sm rounded-4 overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1581090468334-7b1c1e6b2c5e?w=900&auto=format&fit=crop&q=60"
-                        class="w-100" alt="course">
-                      <div class="card-body p-3">
-                        <h6 class="mb-1">Content Creation Bootcamp</h6>
-                        <div class="small text-muted mb-2">Content · Beginner</div>
-                        <p class="small text-muted mb-0">Learn how to create engaging content ideas that attract.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="course-card h-100 shadow-sm rounded-4 overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&auto=format&fit=crop&q=60"
-                        class="w-100" alt="course">
-                      <div class="card-body p-3">
-                        <h6 class="mb-1">Creative Copywriting</h6>
-                        <div class="small text-muted mb-2">Writing · Intermediate</div>
-                        <p class="small text-muted mb-0">Master persuasive writing that sells and connects.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
+        </section>
 
-            <!-- Controls (desktop only) -->
-            <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#coursesCarousel"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#coursesCarousel"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-          </div>
-        </div>
-      </section>
+        <!-- Video Tutorials -->
+        <section class="staff-videos py-5">
+            <div class="container pb-5">
+                <h3 class="text-center mb-5 fw-bold">Featured Tutorials</h3>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Tutorial 1 -->
+                    <div class="col-12 col-md-6">
+                        <div class="video-card position-relative overflow-hidden rounded-4">
+                            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+                                class="w-100 h-100 object-fit-cover" alt="Tutorial">
+                            <div class="video-info d-flex align-items-center gap-2">
+                                <img src="./assets/public/IMAGES/team/ayuk.png" class="avatar rounded-circle"
+                                    alt="Chinedu">
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">Building RESTful APIs with Node.js</h6>
+                                    <small class="text-light opacity-75">Backend Development</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutorial 2 -->
+                    <div class="col-12 col-md-6">
+                        <div class="video-card position-relative overflow-hidden rounded-4">
+                            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1"
+                                class="w-100 h-100 object-fit-cover" alt="Tutorial">
+                            <div class="video-info d-flex align-items-center gap-2">
+                                <img src="./assets/public/IMAGES/team/ayuk.png" class="avatar rounded-circle"
+                                    alt="Chinedu">
+                                <div>
+                                    <h6 class="mb-0 fw-semibold">React State Management</h6>
+                                    <small class="text-light opacity-75">Frontend Development</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="programmes py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 fw-bold text-white">Courses by Chinedu</h2>
+                <div class="row g-4 justify-content-center">
+                    <!-- Course 1 -->
+                    <div class="col-md-4">
+                        <div class="programme-card position-relative">
+                            <img src="./assets/images/Frame 123.png" alt="Course Screen"
+                                class="img-fluid programme-img">
+                            <div class="programme-body text-center">
+                                <h5 class="fw-bold mb-3">Full Stack Development</h5>
+                                <p class="mb-4">
+                                    Master both frontend and backend development with React, Node.js, Express, and
+                                    MongoDB. Build
+                                    production-ready applications.
+                                </p>
+                                <a href="course-details.html" class="register-link fw-bold">View Details <img
+                                        src="./assets/images/mdi_arrow-top-right.png" alt="" srcset=""></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="col-md-4">
+                        <div class="programme-card position-relative">
+                            <img src="./assets/images/Frame 123.png" alt="Course Screen"
+                                class="img-fluid programme-img">
+                            <div class="programme-body text-center">
+                                <h5 class="fw-bold mb-3">Advanced JavaScript</h5>
+                                <p class="mb-4">
+                                    Deep dive into modern JavaScript, ES6+ features, async programming, and advanced
+                                    design patterns for
+                                    professional development.
+                                </p>
+                                <a href="course-details.html" class="register-link fw-bold">View Details <img
+                                        src="./assets/images/mdi_arrow-top-right.png" alt="" srcset=""></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="col-md-4">
+                        <div class="programme-card position-relative">
+                            <img src="./assets/images/Frame 123.png" alt="Course Screen"
+                                class="img-fluid programme-img">
+                            <div class="programme-body text-center">
+                                <h5 class="fw-bold mb-3">React & Redux</h5>
+                                <p class="mb-4">
+                                    Build powerful React applications with state management, hooks, routing, and modern
+                                    best practices for
+                                    scalable apps.
+                                </p>
+                                <a href="course-details.html" class="register-link fw-bold">View Details <img
+                                        src="./assets/images/mdi_arrow-top-right.png" alt="" srcset=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-5 custom-footer" id="footer">
+            <div class="container">
+                <div class="row g-4 align-items-start">
+
+                    <!-- Branding -->
+                    <div class="col-lg-4">
+                        <img src="assets/public/IMAGES/logos/footer-logo.svg" alt="ARVYS Logo" class="img-fluid mb-3"
+                            style="max-width: 120px;">
+                        <h2 class="mb-0 text-white">
+                            The No. 1 Tech Academy for tertiary students.
+                        </h2>
+                        <p class="text-white small" style="width: 85%;">
+                            At ARVYS, we operate with the belief that excellence is attainable through consistency.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-6 col-lg-2">
+                        <h6 class="fw-semibold mb-3 text-white">Quick Links</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="./index.html" class="text-decoration-none text-white">Home</a></li>
+                            <li><a href="./courses.html" class="text-decoration-none text-white">Courses</a></li>
+                            <li><a href="./staffs.html" class="text-decoration-none text-white">Team</a></li>
+                            <li><a href="#" class="text-decoration-none text-white">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company Links -->
+                    <div class="col-6 col-lg-2">
+                        <h6 class="fw-semibold mb-3 text-white">Company</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="./about.html" class="text-decoration-none text-white">About Us</a></li>
+                            <li><a href="./index.html#contact" class="text-decoration-none text-white">Contact Us</a>
+                            </li>
+                            <li><a href="#" class="text-decoration-none text-white">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="col-lg-4">
+                        <h6 class="fw-semibold mb-3 text-white">Join Our Newsletter</h6>
+                        <form class="input-group">
+                            <input type="email" class="form-control bg-white rounded-start-pill"
+                                placeholder="Enter your email" required>
+                            <button type="submit" class="btn rounded-end-pill" style="background-color: #6C65EF;">
+                                Subscribe
+                            </button>
+                        </form>
+
+                        <div class="mt-3">
+                            <img src="./assets/public/IMAGES/footer-circle.svg" alt="">
+                            <img src="./assets/public/IMAGES/footer-circle.svg" alt="">
+                            <img src="./assets/public/IMAGES/footer-circle.svg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr class="my-4 border-muted">
+
+                <div class="text-center small text-white">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script> ARVYS. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
 
 
-    </main>
+    </div>
 
-  </div>
 
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
