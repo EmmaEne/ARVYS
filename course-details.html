@@ -5,293 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Full Stack Development - ARVYS Tech Academy</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Fonts and Styles -->
+    <link href="assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="assets/vendors/aos/aos.css" rel="stylesheet">
+
+    <!-- Theme Styles -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <style>
-        /* Modern Course Details Styles */
-        .course-header {
-            background: linear-gradient(135deg, #0016C2 0%, #4444b5 100%);
-            padding: 100px 0 60px;
-            margin-top: 60px;
-            color: white;
-        }
+    <link rel="stylesheet" href="./assets/css/courses.css">
 
-        .breadcrumb-custom {
-            background: transparent;
-            padding: 0;
-            margin-bottom: 20px;
-        }
-
-        .breadcrumb-custom a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .breadcrumb-custom a:hover {
-            color: white;
-        }
-
-        .breadcrumb-custom .breadcrumb-item.active {
-            color: white;
-        }
-
-        .course-hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .course-hero-desc {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 800px;
-        }
-
-        .course-meta-badges {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 24px;
-        }
-
-        .meta-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            font-size: 0.95rem;
-        }
-
-        .price-card {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            position: sticky;
-            top: 80px;
-        }
-
-        .price-amount {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #0016C2;
-            margin-bottom: 8px;
-        }
-
-        .price-note {
-            color: #666;
-            margin-bottom: 24px;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 24px 0;
-        }
-
-        .feature-list li {
-            padding: 12px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-
-        .feature-list i {
-            color: #10B981;
-            font-size: 1.2rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #1a1a1a;
-        }
-
-        .section-subtitle {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        .skill-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 22, 194, 0.15);
-        }
-
-        .skill-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #0016C2, #4444b5);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-
-        .skill-icon i {
-            color: white;
-            font-size: 1.6rem;
-        }
-
-        .skill-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-
-        .skill-desc {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .module-card {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .module-card:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .module-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .module-number {
-            background: #EEF2FF;
-            color: #0016C2;
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .module-title {
-            flex: 1;
-            margin-left: 20px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .module-duration {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .module-topics {
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid #f0f0f0;
-            color: #666;
-            font-size: 0.95rem;
-            display: none;
-        }
-
-        .module-card.expanded .module-topics {
-            display: block;
-        }
-
-        .instructor-card {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .instructor-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .instructor-info h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .instructor-role {
-            color: #0016C2;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .instructor-stats {
-            display: flex;
-            gap: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #0016C2 0%, #4444b5 100%);
-            padding: 80px 0;
-            text-align: center;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .course-hero-title {
-                font-size: 1.8rem;
-            }
-
-            .price-card {
-                position: static;
-                margin-top: 32px;
-            }
-
-            .course-meta-badges {
-                gap: 12px;
-            }
-
-            .meta-badge {
-                font-size: 0.85rem;
-                padding: 6px 12px;
-            }
-
-            .instructor-card {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+    <script>
+        (function () {
+            const storedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-bs-theme', storedTheme);
+        })();
+    </script>
 </head>
 
 <body>
@@ -359,277 +88,377 @@
             </div>
         </header>
 
-        <!-- Course Header -->
-        <section class="course-header">
+        <!-- New Hero Section -->
+        <section class="course-hero-v2">
             <div class="container">
-                <nav aria-label="breadcrumb" class="breadcrumb-custom">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="./courses.html">Courses</a></li>
-                        <li class="breadcrumb-item active">Full Stack Development</li>
-                    </ol>
-                </nav>
+                <div class="row">
+                    <div class="col-lg-7" data-aos="fade-up">
+                        <nav aria-label="breadcrumb" class="breadcrumb-custom mb-3">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="./courses.html">Courses</a></li>
+                                <li class="breadcrumb-item"><a href="#">Development</a></li>
+                                <li class="breadcrumb-item active">Full Stack</li>
+                            </ol>
+                        </nav>
 
-                <h1 class="course-hero-title">Full Stack Development Bootcamp</h1>
-                <p class="course-hero-desc">
-                    Master both frontend and backend development with React, Node.js, Express, and MongoDB.
-                    Build production-ready web applications and launch your tech career with hands-on projects.
-                </p>
+                        <h1 class="text-white fw-bold mb-3" style="font-family: 'Eudoxus-extrabold', sans-serif;">Full
+                            Stack Development Bootcamp</h1>
+                        <p class="lead mb-4 text-light style="opacity: 0.9; line-height: 1.7;">
+                            Become a professional web developer. Master React, Node.js, Express, and MongoDB.
+                            Build real-world projects and launch your tech career.
+                        </p>
 
-                <div class="course-meta-badges">
-                    <div class="meta-badge">
-                        <i class="bi bi-clock"></i>
-                        <span>12 Weeks</span>
-                    </div>
-                    <div class="meta-badge">
-                        <i class="bi bi-people"></i>
-                        <span>350+ Students</span>
-                    </div>
-                    <div class="meta-badge">
-                        <i class="bi bi-star-fill"></i>
-                        <span>4.9 Rating</span>
-                    </div>
-                    <div class="meta-badge">
-                        <i class="bi bi-bar-chart"></i>
-                        <span>Intermediate Level</span>
+                        <div class="d-flex flex-wrap gap-4 text-white text-opacity-75 mb-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <span>4.9 (240 reviews)</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-people-fill"></i>
+                                <span>350+ Students</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-clock-fill"></i>
+                                <span>12 Weeks</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-translate"></i>
+                                <span>English</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="./assets/public/IMAGES/team/ayuk.png"
+                                class="rounded-circle border border-2 border-white" width="48" height="48"
+                                alt="Instructor">
+                            <div>
+                                <small class="d-block text-white text-opacity-75">Created by</small>
+                                <span class="fw-bold">Eteng Eteng</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Sticky Navigation -->
+        <div class="course-nav-wrapper d-none d-lg-block">
+            <div class="container">
+                <nav class="course-nav">
+                    <a href="#overview" class="course-nav-link active">Overview</a>
+                    <a href="#curriculum" class="course-nav-link">Curriculum</a>
+                    <a href="#instructor" class="course-nav-link">Instructor</a>
+                    <a href="#reviews" class="course-nav-link">Reviews</a>
+                </nav>
+            </div>
+        </div>
 
         <!-- Main Content -->
         <section class="py-5 bg-light">
             <div class="container">
                 <div class="row">
-                    <!-- Left Column -->
+
+                    <!-- Left Content -->
                     <div class="col-lg-8">
 
-                        <!-- What You'll Learn -->
-                        <div class="mb-5">
-                            <h2 class="section-title">What You'll Learn</h2>
-                            <p class="section-subtitle">Master these essential skills and technologies</p>
+                        <!-- Overview -->
+                        <div id="overview" class="mb-5 scroll-offset" data-aos="fade-up">
+                            <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm border mb-4">
+                                <h3 class="fw-bold mb-4">What you'll learn</h3>
+                                <div class="check-list-grid">
+                                    <div class="check-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Build full-stack web applications from scratch</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Master React.js for dynamic frontend UIs</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Create RESTful APIs with Node.js and Express</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Manage databases with MongoDB and SQL</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Implement authentication and security</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>Deploy applications to AWS and Vercel</span>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="skill-card">
-                                        <div class="skill-icon">
-                                            <i class="bi bi-code-square"></i>
+                            <div class="mb-4">
+                                <h3 class="fw-bold mb-3">Description</h3>
+                                <p class="text-secondary mb-3">
+                                    This comprehensive bootcamp is designed to take you from a complete beginner to a
+                                    job-ready full stack developer. You will learn the industry-standard MERN stack
+                                    (MongoDB, Express, React, Node.js) through hands-on projects and real-world
+                                    scenarios.
+                                </p>
+                                <p class="text-secondary">
+                                    Whether you want to work as a freelancer, join a top tech company, or build your own
+                                    startup, this course provides the solid foundation and advanced skills you need to
+                                    succeed in the modern tech landscape.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Curriculum -->
+                        <div id="curriculum" class="mb-5 scroll-offset" data-aos="fade-up">
+                            <h3 class="fw-bold mb-4">Course Content</h3>
+
+                            <div class="accordion curriculum-accordion" id="curriculumAccordion">
+                                <!-- Module 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#mod1">
+                                            <div class="d-flex justify-content-between w-100 pe-3 align-items-center">
+                                                <span>01. Web Fundamentals</span>
+                                                <small class="text-muted fw-normal">2 Weeks</small>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="mod1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Introduction to
+                                                    HTML5 & Semantic Elements</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> CSS3 Styling,
+                                                    Flexbox & Grid</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Responsive Design
+                                                    Principles</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-file-text text-secondary"></i> First Portfolio
+                                                    Project</li>
+                                            </ul>
                                         </div>
-                                        <h3 class="skill-title">Frontend Development</h3>
-                                        <p class="skill-desc">Build responsive, modern UIs with HTML5, CSS3, JavaScript,
-                                            and React</p>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="skill-card">
-                                        <div class="skill-icon">
-                                            <i class="bi bi-server"></i>
+                                <!-- Module 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#mod2">
+                                            <div class="d-flex justify-content-between w-100 pe-3 align-items-center">
+                                                <span>02. JavaScript Mastery</span>
+                                                <small class="text-muted fw-normal">3 Weeks</small>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="mod2" class="accordion-collapse collapse"
+                                        data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Variables, Data
+                                                    Types, and Operators</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> DOM Manipulation &
+                                                    Events</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> ES6+ Features (Arrow
+                                                    functions, Destructuring)</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Async JS: Promises &
+                                                    Async/Await</li>
+                                            </ul>
                                         </div>
-                                        <h3 class="skill-title">Backend Development</h3>
-                                        <p class="skill-desc">Master Node.js, Express, RESTful APIs, and authentication
-                                        </p>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="skill-card">
-                                        <div class="skill-icon">
-                                            <i class="bi bi-database"></i>
+                                <!-- Module 3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#mod3">
+                                            <div class="d-flex justify-content-between w-100 pe-3 align-items-center">
+                                                <span>03. React & Frontend Frameworks</span>
+                                                <small class="text-muted fw-normal">4 Weeks</small>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="mod3" class="accordion-collapse collapse"
+                                        data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> React Components &
+                                                    JSX</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Hooks (useState,
+                                                    useEffect)</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> State Management &
+                                                    Redux</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-file-text text-secondary"></i> Building an
+                                                    E-commerce UI</li>
+                                            </ul>
                                         </div>
-                                        <h3 class="skill-title">Database Management</h3>
-                                        <p class="skill-desc">Work with MongoDB, SQL, data modeling, and optimization
-                                        </p>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="skill-card">
-                                        <div class="skill-icon">
-                                            <i class="bi bi-git"></i>
+                                <!-- Module 4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#mod4">
+                                            <div class="d-flex justify-content-between w-100 pe-3 align-items-center">
+                                                <span>04. Backend Engineering</span>
+                                                <small class="text-muted fw-normal">3 Weeks</small>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                    <div id="mod4" class="accordion-collapse collapse"
+                                        data-bs-parent="#curriculumAccordion">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Node.js Runtime &
+                                                    Architecture</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Building APIs with
+                                                    Express</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> MongoDB & Mongoose
+                                                    Schemas</li>
+                                                <li class="d-flex gap-2 align-items-center"><i
+                                                        class="bi bi-play-circle text-primary"></i> Authentication with
+                                                    JWT</li>
+                                            </ul>
                                         </div>
-                                        <h3 class="skill-title">Version Control & Deployment</h3>
-                                        <p class="skill-desc">Learn Git, GitHub, CI/CD, and deploy to cloud platforms
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Course Curriculum -->
-                        <div class="mb-5">
-                            <h2 class="section-title">Course Curriculum</h2>
-                            <p class="section-subtitle">9 comprehensive modules designed for progressive skill building
-                            </p>
+                        <!-- Reviews -->
+                        <div id="reviews" class="mb-5 scroll-offset" data-aos="fade-up">
+                            <h3 class="fw-bold mb-4">Student Feedback</h3>
 
-                            <div class="module-card" onclick="toggleModule(this)">
-                                <div class="module-header">
-                                    <div class="d-flex align-items-center flex-grow-1">
-                                        <div class="module-number">01</div>
-                                        <div class="module-title">Web Fundamentals & JavaScript</div>
-                                    </div>
-                                    <div class="module-duration">
-                                        <i class="bi bi-clock me-1"></i> Weeks 1-2
-                                    </div>
-                                </div>
-                                <div class="module-topics">
-                                    HTML5 semantic elements • CSS3 & Flexbox/Grid • Responsive design • JavaScript
-                                    basics • DOM manipulation • ES6+ features
-                                </div>
-                            </div>
-
-                            <div class="module-card" onclick="toggleModule(this)">
-                                <div class="module-header">
-                                    <div class="d-flex align-items-center flex-grow-1">
-                                        <div class="module-number">02</div>
-                                        <div class="module-title">Advanced JavaScript & React</div>
-                                    </div>
-                                    <div class="module-duration">
-                                        <i class="bi bi-clock me-1"></i> Weeks 3-5
-                                    </div>
-                                </div>
-                                <div class="module-topics">
-                                    Async programming • Fetch API • React components & JSX • Hooks (useState, useEffect)
-                                    • React Router • State management
-                                </div>
-                            </div>
-
-                            <div class="module-card" onclick="toggleModule(this)">
-                                <div class="module-header">
-                                    <div class="d-flex align-items-center flex-grow-1">
-                                        <div class="module-number">03</div>
-                                        <div class="module-title">Backend with Node.js & Express</div>
-                                    </div>
-                                    <div class="module-duration">
-                                        <i class="bi bi-clock me-1"></i> Weeks 6-8
-                                    </div>
-                                </div>
-                                <div class="module-topics">
-                                    Node.js fundamentals • Express server setup • RESTful API design • Middleware •
-                                    Authentication & JWT • Security best practices
-                                </div>
-                            </div>
-
-                            <div class="module-card" onclick="toggleModule(this)">
-                                <div class="module-header">
-                                    <div class="d-flex align-items-center flex-grow-1">
-                                        <div class="module-number">04</div>
-                                        <div class="module-title">Database & Full Stack Integration</div>
-                                    </div>
-                                    <div class="module-duration">
-                                        <i class="bi bi-clock me-1"></i> Weeks 9-11
-                                    </div>
-                                </div>
-                                <div class="module-topics">
-                                    MongoDB & Mongoose • SQL databases • CRUD operations • Frontend-backend integration
-                                    • File uploads • Real-time features
-                                </div>
-                            </div>
-
-                            <div class="module-card" onclick="toggleModule(this)">
-                                <div class="module-header">
-                                    <div class="d-flex align-items-center flex-grow-1">
-                                        <div class="module-number">05</div>
-                                        <div class="module-title">Deployment & Capstone Project</div>
-                                    </div>
-                                    <div class="module-duration">
-                                        <i class="bi bi-clock me-1"></i> Week 12
-                                    </div>
-                                </div>
-                                <div class="module-topics">
-                                    Git & GitHub workflows • Deployment to AWS/Heroku/Vercel • CI/CD pipelines • Build
-                                    complete full-stack project • Portfolio creation
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Instructor -->
-                        <div class="mb-5">
-                            <h2 class="section-title">Your Instructor</h2>
-                            <p class="section-subtitle">Learn from industry professionals with years of experience</p>
-
-                            <a href="./staffs-details.html" class="text-decoration-none">
-                                <div class="instructor-card">
-                                    <img src="./assets/public/IMAGES/team/ayuk.png" alt="Instructor"
-                                        class="instructor-img">
-                                    <div class="instructor-info">
-                                        <h4>John Doe</h4>
-                                        <div class="instructor-role">Senior Full Stack Developer</div>
-                                        <div class="instructor-stats">
-                                            <span><i class="bi bi-briefcase me-1"></i> 10+ years experience</span>
-                                            <span><i class="bi bi-people me-1"></i> 500+ students taught</span>
-                                            <span><i class="bi bi-star-fill text-warning me-1"></i> 4.9 rating</span>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="./assets/public/IMAGES/students/john.png" class="reviewer-avatar"
+                                        alt="John">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">John Wilson</h6>
+                                        <div class="small text-warning">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
                                         </div>
                                     </div>
+                                    <div class="ms-auto small text-muted">2 weeks ago</div>
                                 </div>
-                            </a>
+                                <p class="text-secondary mb-0">"The best decision I made for my career. The
+                                    project-based learning approach helped me understand complex concepts easily. Highly
+                                    recommended!"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="./assets/public/IMAGES/students/vivian.png" class="reviewer-avatar"
+                                        alt="Vivian">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Vivian Effong</h6>
+                                        <div class="small text-warning">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-half"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ms-auto small text-muted">1 month ago</div>
+                                </div>
+                                <p class="text-secondary mb-0">"Excellent curriculum and amazing support from the
+                                    instructors. I landed my first developer job just 2 weeks after graduating!"</p>
+                            </div>
                         </div>
 
                     </div>
 
-                    <!-- Right Column - Price Card -->
+                    <!-- Right Sidebar (Overlapping) -->
                     <div class="col-lg-4">
-                        <div class="price-card">
-                            <div class="price-amount">₦80,000</div>
-                            <p class="price-note">One-time payment • Lifetime access</p>
+                        <div class="sidebar-overlap" data-aos="fade-left">
 
-                            <a href="./it-register.html" class="btn btn-primary w-100 btn-lg rounded-pill mb-3">
-                                Enroll Now <i class="bi bi-arrow-right ms-2"></i>
-                            </a>
+                            <!-- Video/Image Preview -->
+                            <div class="hero-media-wrapper mb-3 bg-white position-relative">
+                                <img src="./assets/images/business/business-img-2-min.jpg" class="w-100"
+                                    style="height: 200px; object-fit: cover;" alt="Preview">
+                                <div class="play-button">
+                                    <i class="bi bi-play-fill text-primary"></i>
+                                </div>
+                                <div class="position-absolute bottom-0 start-0 w-100 p-2 text-center text-white"
+                                    style="background: rgba(0,0,0,0.6); font-size: 0.9rem;">
+                                    Preview this course
+                                </div>
+                            </div>
 
-                            <a href="./courses.html" class="btn btn-outline-primary w-100 rounded-pill mb-4">
-                                View All Courses
-                            </a>
+                            <div class="enroll-card">
+                                <div class="d-flex align-items-center mb-3">
+                                    <h2 class="fw-bold text-primary mb-0">₦80,000</h2>
+                                    <span class="text-decoration-line-through text-muted ms-3">₦120,000</span>
+                                    <span class="badge bg-danger ms-auto">33% OFF</span>
+                                </div>
 
-                            <h6 class="fw-bold mb-3">This course includes:</h6>
-                            <ul class="feature-list">
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>12 weeks intensive training</span>
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>5+ Real-world projects</span>
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>Certificate of completion</span>
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>Career support & mentorship</span>
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>Lifetime community access</span>
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>Live instructor sessions</span>
-                                </li>
-                            </ul>
+                                <a href="./it-register.html"
+                                    class="btn btn-primary w-100 rounded-pill btn-lg mb-3 shadow">
+                                    Enroll Now
+                                </a>
+                                <p class="text-center small text-muted mb-4">30-Day Money-Back Guarantee</p>
 
-                            <p class="text-center mt-3 mb-0 small text-muted">
-                                <i class="bi bi-shield-check me-1"></i> 30-day money-back guarantee
-                            </p>
+                                <h6 class="fw-bold small mb-3 text-uppercase">This course includes:</h6>
+                                <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                    <li class="d-flex align-items-center gap-3">
+                                        <i class="bi bi-camera-video text-secondary"></i>
+                                        <span>54 hours on-demand video</span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-3">
+                                        <i class="bi bi-file-earmark-code text-secondary"></i>
+                                        <span>12 Coding exercises</span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-3">
+                                        <i class="bi bi-journal-text text-secondary"></i>
+                                        <span>25 Articles</span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-3">
+                                        <i class="bi bi-trophy text-secondary"></i>
+                                        <span>Certificate of completion</span>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-3">
+                                        <i class="bi bi-infinity text-secondary"></i>
+                                        <span>Full lifetime access</span>
+                                    </li>
+                                </ul>
+
+                                <hr class="my-4">
+
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <button class="btn btn-sm btn-outline-secondary rounded-circle"
+                                        style="width: 40px; height: 40px;"><i class="bi bi-share"></i></button>
+                                    <button class="btn btn-sm btn-outline-secondary rounded-circle"
+                                        style="width: 40px; height: 40px;"><i class="bi bi-heart"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <h2 class="fw-bold mb-3">Ready to Launch Your Tech Career?</h2>
-                <p class="lead mb-4" style="opacity: 0.9; font-size: 1.125rem;">
-                    Join 350+ students building successful careers in tech
-                </p>
-                <a href="./it-register.html" class="btn btn-light btn-lg rounded-pill px-5">
-                    Enroll Now <i class="bi bi-arrow-right ms-2"></i>
-                </a>
-                <p class="mt-3 mb-0 small" style="opacity: 0.8;">
-                    <i class="bi bi-shield-check me-1"></i> 30-day money-back guarantee
-                </p>
+                </div>
             </div>
         </section>
 
@@ -694,14 +523,28 @@
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/aos/aos.js"></script>
     <script src="./assets/js/page-loader.js"></script>
 
-    <!-- Module Toggle Script -->
     <script>
-        function toggleModule(element) {
-            element.classList.toggle('expanded');
-        }
+        // Init AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Simple Nav Active State
+        const navLinks = document.querySelectorAll('.course-nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
     </script>
 </body>
 
