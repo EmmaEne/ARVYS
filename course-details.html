@@ -26,7 +26,7 @@
 
         .section-title {
             font-size: 20px;
-       
+
             margin-bottom: 24px;
             color: var(--bs-heading-color);
         }
@@ -289,7 +289,48 @@
 
         @media (max-width: 991px) {
             .mobile-cta-bar {
-                display: block;
+                display: flex;
+                box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid #eee;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+            }
+
+            .mobile-cta-bar .price-info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                flex: 1;
+            }
+
+            .mobile-cta-bar .current-price {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--bs-primary);
+                line-height: 1;
+                margin-bottom: 4px;
+                font-family: 'Eudoxus-extrabold', sans-serif;
+            }
+
+            .mobile-cta-bar .price-details {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 0.75rem;
+            }
+
+            .mobile-cta-bar .old-price {
+                text-decoration: line-through;
+                color: #9CA3AF;
+            }
+
+            .mobile-cta-bar .discount-badge {
+                background: #EF4444;
+                color: white;
+                padding: 2px 8px;
+                border-radius: 12px;
+                font-weight: 600;
             }
 
             .course-hero-title {
@@ -976,6 +1017,18 @@
                 </div>
             </div>
         </section>
+
+        <!-- Mobile Bottom Navigation Bar -->
+        <div class="mobile-cta-bar d-lg-none">
+            <div class="price-info">
+                <div class="current-price">₦80,000</div>
+                <div class="price-details">
+                    <span class="old-price">₦120,000</span>
+                    <span class="discount-badge">33% OFF</span>
+                </div>
+            </div>
+            <a href="./it-register.html" class="btn btn-primary">Enroll Now</a>
+        </div>
 
         <!-- Footer -->
         <footer class="py-5 custom-footer" id="footer">
