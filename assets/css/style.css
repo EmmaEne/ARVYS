@@ -10,12 +10,20 @@ Template author: ARVYS
 }
 
 html {
-  overflow-x: hidden;
   max-width: 100vw;
+  scroll-behavior: smooth;
+}
+
+/* Overlapping sidebar card */
+.sidebar-overlap {
+  margin-top: -200px;
+  /* Pull up into hero space */
+  position: relative;
+  z-index: 100;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
   position: relative;
 }
